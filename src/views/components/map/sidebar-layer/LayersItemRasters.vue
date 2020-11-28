@@ -16,7 +16,6 @@ export default {
     props: {
         color: String
     },
-
     data() {
         return {
             loading: '',
@@ -46,7 +45,7 @@ export default {
                     range: [1920, 1930]
                 },
                 {
-                    title: '1910',
+                    title: '1905',
                     titleReal: '1905',
                     status: false,
                     range: [1910, 1920]
@@ -78,7 +77,6 @@ export default {
             ]
         }
     },
-
     created() {
         overlayGroupRasters.getLayers().clear()
 
@@ -87,7 +85,7 @@ export default {
                 title: 'saraBrasil30',
                 visible: true,
                 source: new ol.source.TileWMS({
-                    url: process.env.urlGeoserver + '/wms',
+                    url: process.env.urlGeoserverPauliceia + '/wms',
                     params: {
                         'FORMAT': 'image/png',
                         'VERSION': '1.1.1',
@@ -100,7 +98,6 @@ export default {
             })
         )
     },
-
     methods: {
         modifyLayer(layerSelected) {
             if(overlayGroupRasters.getLayers().getLength() > 0)
@@ -123,7 +120,7 @@ export default {
                         title: layerSelected.title,
                         visible: true,
                         source: new ol.source.TileWMS({
-                            url: process.env.urlGeoserver + '/wms',
+                            url: process.env.urlGeoserverPauliceia + '/wms',
                             params: {
                                 'FORMAT': 'image/png',
                                 'VERSION': '1.1.1',
@@ -148,7 +145,6 @@ export default {
         }
     }
 }
-
 </script>
 
 <style lang="sass" scoped>
